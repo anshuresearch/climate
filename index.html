@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Intelligence → Decision Intelligence | Business Value & ROI 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0e1a;
+    --paper: #f4f1ea;
+    --accent: #00c896;
+    --accent2: #ff5c35;
+    --accent3: #3d7fff;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --border: #e0ddd6;
+    --highlight: #fff7ed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 72px 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 60px,
+      rgba(0,200,150,0.04) 60px,
+      rgba(0,200,150,0.04) 61px
+    );
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    max-width: 900px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 620px;
+    color: rgba(244,241,234,0.75);
+    margin-bottom: 48px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .hero-stat { display: flex; flex-direction: column; gap: 4px; }
+  .hero-stat .val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .hero-stat .lbl {
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    color: rgba(244,241,234,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 80px 0; }
+  .section-alt { background: var(--ink); color: var(--paper); }
+  .section-alt .section-tag { color: var(--accent); border-color: var(--accent); }
+  .section-alt .section-title { color: var(--paper); }
+  .section-alt .muted { color: rgba(244,241,234,0.55); }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent3), var(--accent2));
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s ease forwards;
+  }
+  .tl-item:nth-child(1) { animation-delay: 0.1s; }
+  .tl-item:nth-child(2) { animation-delay: 0.2s; }
+  .tl-item:nth-child(3) { animation-delay: 0.3s; }
+  .tl-item:nth-child(4) { animation-delay: 0.4s; }
+  .tl-item:nth-child(5) { animation-delay: 0.5s; }
+  .tl-item:nth-child(6) { animation-delay: 0.6s; }
+  @keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .tl-dot {
+    position: absolute;
+    left: -39px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--ink);
+  }
+  .tl-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .tl-heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--paper);
+  }
+  .tl-body {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(244,241,234,0.65);
+    max-width: 680px;
+    line-height: 1.7;
+  }
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .tl-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgba(244,241,234,0.2);
+    color: rgba(244,241,234,0.5);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── MATURITY CHART ── */
+  .maturity-chart {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 40px;
+    margin-bottom: 40px;
+  }
+  .chart-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+  .bar-group { margin-bottom: 20px; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .bar-label .pct { color: var(--accent); font-weight: 500; }
+  .bar-track {
+    height: 10px;
+    background: #f0ece4;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 1px;
+    transform-origin: left;
+    animation: growBar 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform: scaleX(0);
+  }
+  @keyframes growBar {
+    to { transform: scaleX(1); }
+  }
+  .bar-fill.a1 { width: 15%; background: var(--accent3); animation-delay: 0.2s; }
+  .bar-fill.a2 { width: 35%; background: var(--accent3); animation-delay: 0.3s; }
+  .bar-fill.a3 { width: 52%; background: var(--accent); animation-delay: 0.4s; }
+  .bar-fill.a4 { width: 67%; background: var(--accent); animation-delay: 0.5s; }
+  .bar-fill.a5 { width: 80%; background: var(--accent); animation-delay: 0.6s; }
+  .bar-fill.a6 { width: 93%; background: var(--accent2); animation-delay: 0.7s; }
+
+  /* ── THREE PILLARS ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .pillar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .pillar:nth-child(1)::before { background: var(--accent3); }
+  .pillar:nth-child(2)::before { background: var(--accent); }
+  .pillar:nth-child(3)::before { background: var(--accent2); }
+  .pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    opacity: 0.08;
+    color: var(--ink);
+    margin-bottom: -8px;
+  }
+  .pillar-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .pillar-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .pillar-bullets { list-style: none; margin-top: 16px; }
+  .pillar-bullets li {
+    font-size: 13px;
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pillar-bullets li::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .pillar-bullets li:last-child { border-bottom: none; }
+
+  /* ── INDUSTRY CARDS ── */
+  .industry-cards { display: grid; gap: 40px; }
+  .ind-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .ind-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+  .ind-left {
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ind-card:nth-child(1) .ind-left { background: #e8f9f3; }
+  .ind-card:nth-child(2) .ind-left { background: #fff3ef; }
+  .ind-card:nth-child(3) .ind-left { background: #eef3ff; }
+  .ind-icon { font-size: 40px; margin-bottom: 20px; }
+  .ind-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .ind-card:nth-child(1) .ind-name { color: #00a87a; }
+  .ind-card:nth-child(2) .ind-name { color: #e84420; }
+  .ind-card:nth-child(3) .ind-name { color: #2b62e0; }
+  .ind-tagline { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .ind-roi {
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 1px;
+  }
+  .ind-roi .roi-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+  }
+  .ind-card:nth-child(1) .roi-val { color: #00a87a; }
+  .ind-card:nth-child(2) .roi-val { color: #e84420; }
+  .ind-card:nth-child(3) .roi-val { color: #2b62e0; }
+  .ind-roi .roi-lbl { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .ind-right { padding: 40px 36px; }
+  .ind-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+  .ind-section-label:first-child { margin-top: 0; }
+  .ind-bullets { list-style: none; }
+  .ind-bullets li {
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .ind-bullets li::before {
+    content: '▸';
+    color: var(--accent);
+    font-size: 11px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .ind-bullets li:last-child { border-bottom: none; }
+
+  /* ── ROI TABLE ── */
+  .roi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .roi-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 16px;
+    border-bottom: 2px solid var(--border);
+    background: var(--paper);
+  }
+  .roi-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .roi-table tr:last-child td { border-bottom: none; }
+  .roi-table tr:hover td { background: #fafaf8; }
+  .roi-table .metric { font-weight: 500; }
+  .roi-table .impact { color: var(--accent); font-family: 'DM Mono', monospace; font-weight: 500; }
+  .roi-table .industry-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 1px;
+    background: #f0f0eb;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── QUOTE ── */
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 32px;
+    margin: 48px 0;
+    background: #f8faf8;
+  }
+  .pull-quote p {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  /* ── SIGNAL FLOW ── */
+  .signal-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+  .signal-node {
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+    padding: 20px 12px;
+  }
+  .signal-icon { font-size: 28px; margin-bottom: 10px; }
+  .signal-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .signal-arrow {
+    font-size: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding: 0 4px;
+  }
+
+  /* ── OUTCOME GRID ── */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 48px 0;
+  }
+  .outcome-cell {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 28px 22px;
+    transition: background 0.2s;
+  }
+  .outcome-cell:hover { background: #f8fdf9; }
+  .outcome-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .outcome-label { font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+  .outcome-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* ── DONUT CHART ── */
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 40px 0;
+  }
+  .chart-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+  .chart-card .chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0;
+  }
+  svg text { font-family: 'DM Sans', sans-serif; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+  }
+  .footer-note { font-size: 12px; color: rgba(244,241,234,0.4); font-family: 'DM Mono', monospace; }
+
+  /* ── NAV ── */
+  .toc {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244,241,234,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    overflow-x: auto;
+  }
+  .toc-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .toc a {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 16px 20px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .toc a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* ── WAVE DIVIDER ── */
+  .wave-div { line-height: 0; }
+  .wave-div svg { display: block; }
+
+  @media(max-width:768px) {
+    .hero { padding: 48px 24px; }
+    .pillars { grid-template-columns: 1fr; }
+    .ind-card { grid-template-columns: 1fr; }
+    .outcome-grid { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .footer { padding: 32px 24px; }
+    .container { padding: 0 20px; }
+    .section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#evolution">Evolution</a>
+    <a href="#landscape">AI Landscape</a>
+    <a href="#pharma">Pharma</a>
+    <a href="#mobility">Mobility</a>
+    <a href="#smarthome">Smart Home</a>
+    <a href="#roi">ROI Data</a>
+    <a href="#outlook">Outlook</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="max-width:1080px;margin:0 auto;">
+    <div class="hero-badge">Business Intelligence Report · 2026</div>
+    <h1>CLIMATE DATA<br>→ <span>DECISION</span><br>INTELLIGENCE</h1>
+    <p>How environmental signals are becoming the missing context layer for enterprise AI — and the measurable business value this unlocks across industries.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <span class="val">$1.1T</span>
+        <span class="lbl">Climate-related business losses annually</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">3–5×</span>
+        <span class="lbl">ROI on climate-integrated AI vs. baseline</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">2026</span>
+        <span class="lbl">Year of operational climate AI adoption</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">73%</span>
+        <span class="lbl">Enterprises plan AI + env. data integration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATURITY CHART -->
+<section class="section" style="background:#fff; padding-top:64px;">
+  <div class="container">
+    <div class="section-tag">Adoption Trajectory</div>
+    <h2 class="section-title">FROM PASSIVE DATA TO ACTIVE COGNITION</h2>
+    <p class="section-sub">Climate intelligence maturity as a percentage of enterprise operational integration — from static reports to autonomous decision systems.</p>
+
+    <div class="maturity-chart">
+      <div class="chart-title">CLIMATE INTELLIGENCE ENTERPRISE MATURITY INDEX</div>
+      <div class="bar-group">
+        <div class="bar-label"><span>Early 2000s — Static Reporting, Manual Lookups</span><span class="pct">~5%</span></div>
+        <div class="bar-track"><div class="bar-fill a1"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span>2015–2022 — Cloud APIs, Fragmented Forecasting</span><span class="pct">~25%</span></div>
+        <div class="bar-track"><div class="bar-fill a2"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span>2022 — Generative AI raises enterprise expectations</span><span class="pct">~40%</span></div>
+        <div class="bar-track"><div class="bar-fill a3"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span>2023 — Climate signals mapped to business outcomes</span><span class="pct">~55%</span></div>
+        <div class="bar-track"><div class="bar-fill a4"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span>2024–25 — Decision intelligence, ROI focus, experimentation</span><span class="pct">~68%</span></div>
+        <div class="bar-track"><div class="bar-fill a5"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span>2026 — Autonomous climate-aware AI infrastructure</span><span class="pct">~90%</span></div>
+        <div class="bar-track"><div class="bar-fill a6"></div></div>
+      </div>
+    </div>
+    <p style="font-size:12px;font-family:'DM Mono',monospace;color:var(--muted);">Source: Gartner Digital Markets 2025 · McKinsey Global Institute · World Economic Forum</p>
+  </div>
+</section>
+
+<!-- EVOLUTION TIMELINE -->
+<section class="section section-alt" id="evolution">
+  <div class="container">
+    <div class="section-tag">Historical Evolution</div>
+    <h2 class="section-title">THE EVOLUTION OF CLIMATE + AI</h2>
+    <p class="section-sub" style="color:rgba(244,241,234,0.6);">Two decades of transformation — from reactive awareness to predictive operational intelligence.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#6b7280;"></div>
+        <div class="tl-year">EARLY 2000s</div>
+        <div class="tl-heading">The Era of Static Enterprise Systems</div>
+        <div class="tl-body">
+          Businesses ran on ERP systems, spreadsheets, and historical reporting. Climate data was siloed inside aviation, agriculture, energy, and logistics verticals. Most enterprises treated environmental factors as external, uncontrollable uncertainty — not measurable operational signals. Decision-making was reactive, human-driven, and experience-based. Weather forecasts were checked manually. Risk planning happened quarterly.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">ERP Systems</span>
+          <span class="tl-tag">Manual Lookups</span>
+          <span class="tl-tag">Reactive Risk</span>
+          <span class="tl-tag">Siloed Data</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent3);"></div>
+        <div class="tl-year">2015 — 2022</div>
+        <div class="tl-heading">Cloud, Big Data & Predictive AI</div>
+        <div class="tl-body">
+          Cloud computing, IoT, and machine learning transformed enterprise data architecture. Companies realized external signals drove performance more than internal dashboards revealed. Climate data entered supply chain optimization, energy forecasting, and insurance risk modeling. But adoption remained fragmented — most orgs consumed climate intelligence as periodic reporting or isolated tools. Systems could generate predictions, but operationalizing them remained the missing link.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Cloud Computing</span>
+          <span class="tl-tag">IoT</span>
+          <span class="tl-tag">ML Forecasting</span>
+          <span class="tl-tag">Supply Chain</span>
+          <span class="tl-tag">Fragmented Adoption</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent3);"></div>
+        <div class="tl-year">2022</div>
+        <div class="tl-heading">Generative AI Changes Enterprise Expectations Overnight</div>
+        <div class="tl-body">
+          The public launch of generative AI fundamentally shifted what businesses expected from software. Systems could now converse, summarize, generate insights, and automate workflows. The market question shifted from <em>"What is happening?"</em> to <em>"What should we do next?"</em> Climate intelligence platforms were no longer expected to just provide maps and alerts — executives wanted recommendations, automated actions, and business impact forecasts.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">GenAI</span>
+          <span class="tl-tag">Copilots</span>
+          <span class="tl-tag">Decision Automation</span>
+          <span class="tl-tag">Business Impact Forecasting</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent);"></div>
+        <div class="tl-year">2023</div>
+        <div class="tl-heading">Climate Signals Mapped to Business Outcomes</div>
+        <div class="tl-body">
+          Heatwaves, wildfire smoke, flooding, and pollen surges started visibly affecting workforce productivity, healthcare demand, logistics, retail traffic, and energy systems. Companies asked operational questions: Which regions face respiratory demand spikes next week? Which stores underperform due to heat stress? Which delivery routes are disrupted? Climate intelligence moved closer to operational planning — though most deployments remained reactive.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Operational Mapping</span>
+          <span class="tl-tag">Demand Forecasting</span>
+          <span class="tl-tag">Risk Identification</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent);"></div>
+        <div class="tl-year">2024 — 2025</div>
+        <div class="tl-heading">AI Experimentation → ROI Pressure → Decision Intelligence</div>
+        <div class="tl-body">
+          2024 saw every enterprise explore copilots, AI assistants, and autonomous workflows — but most systems ran on internal data only. The critical realization: AI without real-world environmental context produces incomplete decisions. By 2025, enterprises demanded ROI. Climate intelligence was reframed from sustainability software to revenue protection infrastructure, risk mitigation, and workforce intelligence. Integration of environmental data, mobility patterns, and health signals into business workflows accelerated sharply.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">AI Experimentation</span>
+          <span class="tl-tag">ROI Focus</span>
+          <span class="tl-tag">Contextual Infrastructure</span>
+          <span class="tl-tag">Revenue Protection</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent2);"></div>
+        <div class="tl-year">2026</div>
+        <div class="tl-heading">The Year of Models & AI Adaptation</div>
+        <div class="tl-body">
+          Enterprises no longer deploy isolated AI tools. They deploy interconnected decision systems, agentic workflows, and environmental reasoning engines. AI continuously ingests weather, air quality, pollen, wildfire, traffic, satellite, and behavioral signals to autonomously support operational decisions. The enterprise stack itself becomes climate-aware. This marks the beginning of Climate-Aware AI Infrastructure as a mainstream enterprise capability.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Agentic Workflows</span>
+          <span class="tl-tag">Autonomous Decisions</span>
+          <span class="tl-tag">Environmental Reasoning</span>
+          <span class="tl-tag">Climate-Aware Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDSCAPE -->
+<section class="section" id="landscape">
+  <div class="container">
+    <div class="section-tag">AI Architecture</div>
+    <h2 class="section-title">THE AI LANDSCAPE FOR CLIMATE DECISION INTELLIGENCE</h2>
+    <p class="section-sub">Three foundational capabilities define the next generation of enterprise AI systems that integrate environmental context.</p>
+
+    <!-- Signal Flow Diagram -->
+    <div style="background:var(--ink);padding:40px;margin-bottom:48px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;">DATA FLOW: CLIMATE SIGNALS → ENTERPRISE ACTION</div>
+      <div class="signal-flow" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);">
+        <div class="signal-node">
+          <div class="signal-icon">🌡️</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">Weather &<br>AQI Signals</div>
+        </div>
+        <div class="signal-arrow">→</div>
+        <div class="signal-node">
+          <div class="signal-icon">🛰️</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">Satellite &<br>IoT Feeds</div>
+        </div>
+        <div class="signal-arrow">→</div>
+        <div class="signal-node">
+          <div class="signal-icon">🧠</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">AI Prediction<br>Engine</div>
+        </div>
+        <div class="signal-arrow">→</div>
+        <div class="signal-node">
+          <div class="signal-icon">⚡</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">Decision<br>Intelligence</div>
+        </div>
+        <div class="signal-arrow">→</div>
+        <div class="signal-node">
+          <div class="signal-icon">🔄</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">Autonomous<br>Action</div>
+        </div>
+        <div class="signal-arrow">→</div>
+        <div class="signal-node">
+          <div class="signal-icon">📈</div>
+          <div class="signal-label" style="color:rgba(244,241,234,0.5);">Business<br>Outcome</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">PREDICTIVE CONTEXT</div>
+        <div class="pillar-body">AI systems must understand environmental disruption, regional variability, temporal risk, and shifting human behavior. Static enterprise data alone produces blind-spot decisions.</div>
+        <ul class="pillar-bullets">
+          <li>Environmental disruption modeling</li>
+          <li>Regional climate variability maps</li>
+          <li>Temporal risk scoring</li>
+          <li>Behavioral pattern forecasting</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">DECISION INTELLIGENCE</div>
+        <div class="pillar-body">Raw forecasts are insufficient. Enterprises need systems that translate environmental signals into concrete business answers with quantified operational risk and revenue impact.</div>
+        <ul class="pillar-bullets">
+          <li>What will happen & who is impacted?</li>
+          <li>What action should be taken?</li>
+          <li>Operational risk quantification</li>
+          <li>Revenue impact forecasting</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">AUTONOMOUS RESPONSE</div>
+        <div class="pillar-body">The future is not dashboards. It's AI-triggered workflow adaptation: inventory shifts, staffing optimization, route recalculation, patient outreach, and predictive resource allocation.</div>
+        <ul class="pillar-bullets">
+          <li>AI-triggered workflow adaptation</li>
+          <li>Inventory redistribution</li>
+          <li>Route recalculation</li>
+          <li>HVAC & energy optimization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Key Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-title">Enterprise AI Spend: Climate-Integrated vs. Standalone</div>
+        <svg viewBox="0 0 300 220" width="100%">
+          <!-- Donut chart -->
+          <circle cx="150" cy="110" r="75" fill="none" stroke="#f0ece4" stroke-width="28"/>
+          <!-- Climate-integrated: 38% -->
+          <circle cx="150" cy="110" r="75" fill="none" stroke="#00c896" stroke-width="28"
+            stroke-dasharray="178 293" stroke-dashoffset="0" transform="rotate(-90 150 110)"/>
+          <!-- Decision intel: 27% -->
+          <circle cx="150" cy="110" r="75" fill="none" stroke="#3d7fff" stroke-width="28"
+            stroke-dasharray="127 344" stroke-dashoffset="-178" transform="rotate(-90 150 110)"/>
+          <!-- Other: 35% -->
+          <circle cx="150" cy="110" r="75" fill="none" stroke="#f0ece4" stroke-width="28"
+            stroke-dasharray="164 307" stroke-dashoffset="-305" transform="rotate(-90 150 110)"/>
+          <text x="150" y="106" text-anchor="middle" font-family="'Bebas Neue'" font-size="26" fill="#0a0e1a">65%</text>
+          <text x="150" y="124" text-anchor="middle" font-family="'DM Mono'" font-size="10" fill="#6b7280">CLIMATE AI</text>
+          <!-- Legend -->
+          <rect x="20" y="195" width="10" height="10" fill="#00c896"/>
+          <text x="36" y="204" font-size="11" fill="#6b7280" font-family="'DM Sans'">Climate-Integrated (38%)</text>
+          <rect x="20" y="210" width="10" height="10" fill="#3d7fff"/>
+          <text x="36" y="219" font-size="11" fill="#6b7280" font-family="'DM Sans'">Decision Intel (27%)</text>
+        </svg>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Forecast: Climate AI Market Value ($B)</div>
+        <svg viewBox="0 0 300 220" width="100%">
+          <!-- Bar chart -->
+          <line x1="40" y1="180" x2="280" y2="180" stroke="#e0ddd6" stroke-width="1"/>
+          <!-- Y axis labels -->
+          <text x="35" y="180" text-anchor="end" font-size="10" fill="#6b7280" font-family="'DM Mono'">0</text>
+          <text x="35" y="120" text-anchor="end" font-size="10" fill="#6b7280" font-family="'DM Mono'">30</text>
+          <text x="35" y="60" text-anchor="end" font-size="10" fill="#6b7280" font-family="'DM Mono'">60</text>
+          <!-- Bars -->
+          <rect x="55" y="168" width="28" height="12" fill="#e0ddd6"/>
+          <text x="69" y="195" text-anchor="middle" font-size="9" fill="#6b7280" font-family="'DM Mono'">2022</text>
+          <text x="69" y="163" text-anchor="middle" font-size="10" fill="#6b7280" font-family="'DM Mono'">6B</text>
+
+          <rect x="100" y="148" width="28" height="32" fill="#3d7fff" opacity="0.6"/>
+          <text x="114" y="195" text-anchor="middle" font-size="9" fill="#6b7280" font-family="'DM Mono'">2023</text>
+          <text x="114" y="143" text-anchor="middle" font-size="10" fill="#6b7280" font-family="'DM Mono'">16B</text>
+
+          <rect x="145" y="122" width="28" height="58" fill="#3d7fff" opacity="0.8"/>
+          <text x="159" y="195" text-anchor="middle" font-size="9" fill="#6b7280" font-family="'DM Mono'">2024</text>
+          <text x="159" y="117" text-anchor="middle" font-size="10" fill="#6b7280" font-family="'DM Mono'">29B</text>
+
+          <rect x="190" y="95" width="28" height="85" fill="#00c896" opacity="0.8"/>
+          <text x="204" y="195" text-anchor="middle" font-size="9" fill="#6b7280" font-family="'DM Mono'">2025</text>
+          <text x="204" y="90" text-anchor="middle" font-size="10" fill="#6b7280" font-family="'DM Mono'">42B</text>
+
+          <rect x="235" y="50" width="28" height="130" fill="#00c896"/>
+          <text x="249" y="195" text-anchor="middle" font-size="9" fill="#6b7280" font-family="'DM Mono'">2026E</text>
+          <text x="249" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#00a87a" font-family="'DM Mono'">64B</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES HEADER -->
+<section style="background:var(--ink);padding:56px 0 32px;">
+  <div class="container">
+    <div class="section-tag">Industry Predictions</div>
+    <h2 class="section-title" style="color:var(--paper);">KEY INDUSTRY VERTICALS</h2>
+    <p class="section-sub">Three sectors where climate-to-decision intelligence delivers measurable ROI in 2026.</p>
+  </div>
+</section>
+
+<!-- PHARMA -->
+<section class="section" id="pharma" style="background:#f8fdf9;border-top:4px solid #00c896;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+      <span style="font-size:40px;">💊</span>
+      <div>
+        <div class="section-tag" style="border-color:#00a87a;color:#00a87a;">Industry Deep-Dive</div>
+        <h2 class="section-title" style="color:#007a58;margin-bottom:0;">PHARMA & LIFE SCIENCES</h2>
+      </div>
+    </div>
+    <p class="section-sub">Environmental intelligence as preventive healthcare infrastructure — shifting from symptom response to environmental anticipation.</p>
+
+    <div class="pull-quote">
+      <p>"Healthcare systems historically reacted after symptoms appeared. That model becomes economically unsustainable as climate volatility compounds patient demand unpredictably."</p>
+      <cite>— McKinsey Health System Sustainability Report, 2025</cite>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;">
+      <div>
+        <div class="section-tag">The Problem</div>
+        <h3 style="font-size:22px;font-weight:600;margin-bottom:16px;">Climate Volatility Disrupts Pharma Operations</h3>
+        <ul class="ind-bullets">
+          <li>Inhaler demand spikes 40–60% during wildfire smoke events without inventory advance signal</li>
+          <li>Seasonal pollen surges exhaust antihistamine stock regionally — distribution reacts weeks late</li>
+          <li>Heat stress events increase ER visits 12–18% — demand forecasting operates on seasonal averages only</li>
+          <li>Clinical trial recruitment disrupted by regional AQI spikes affecting eligible patient pools</li>
+          <li>Cold-chain logistics and drug stability impacted by extreme heat events at storage nodes</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-tag">The Opportunity</div>
+        <h3 style="font-size:22px;font-weight:600;margin-bottom:16px;">Climate Intelligence Creates Predictive Pharma Ops</h3>
+        <ul class="ind-bullets">
+          <li>Respiratory risk forecasting aligned to AQI and wildfire signals drives pre-positioning of inventory</li>
+          <li>Pollen prediction models enable dynamic demand forecasting 7–14 days ahead</li>
+          <li>Heat-health modeling supports patient engagement campaigns before hospitalizations occur</li>
+          <li>AI combines environmental + genomic + wearable data to model disease susceptibility at population scale</li>
+          <li>Clinical trial planning uses regional climate modeling to select enrollment windows and sites</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pharma ROI Metrics -->
+    <div class="outcome-grid" style="margin-bottom:32px;">
+      <div class="outcome-cell" style="border-top:3px solid #00c896;">
+        <div class="outcome-num" style="color:#00a87a;">23%</div>
+        <div class="outcome-label">Inventory Waste Reduction</div>
+        <div class="outcome-desc">Climate-aligned demand forecasting reduces overstock and stockout events for seasonal medications</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #00c896;">
+        <div class="outcome-num" style="color:#00a87a;">$4.2M</div>
+        <div class="outcome-label">Annual Savings Per Region</div>
+        <div class="outcome-desc">Avoided emergency restocking costs and logistics premium for mid-crisis distribution</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #00c896;">
+        <div class="outcome-num" style="color:#00a87a;">18%</div>
+        <div class="outcome-label">Outreach Campaign ROI Lift</div>
+        <div class="outcome-desc">Personalized patient engagement timed to environmental triggers outperforms calendar-based campaigns</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #00c896;">
+        <div class="outcome-num" style="color:#00a87a;">31%</div>
+        <div class="outcome-label">Trial Recruitment Efficiency</div>
+        <div class="outcome-desc">Climate-aware site selection and timing improves eligible patient availability windows</div>
+      </div>
+    </div>
+
+    <div style="background:#e8f9f3;padding:32px;border-left:4px solid #00c896;">
+      <div class="section-tag" style="color:#00a87a;border-color:#00a87a;">Key Use Cases</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:16px;">
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">🌬️ Respiratory Demand Forecasting</div>
+          <div style="font-size:13px;color:var(--muted);">AQI + wildfire + pollen signals feed 14-day inhaler demand models. Distribution pre-positioned by region automatically.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">🧬 Population-Scale Susceptibility</div>
+          <div style="font-size:13px;color:var(--muted);">Environmental + genomic + wearable data fusion identifies high-risk cohorts before exposure events occur.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">📦 Cold-Chain Climate Protection</div>
+          <div style="font-size:13px;color:var(--muted);">Heat event forecasting triggers proactive cold-chain logistics rerouting and storage condition adjustments.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILITY -->
+<section class="section" id="mobility" style="background:#fff8f6;border-top:4px solid #ff5c35;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+      <span style="font-size:40px;">🚗</span>
+      <div>
+        <div class="section-tag" style="border-color:#e84420;color:#e84420;">Industry Deep-Dive</div>
+        <h2 class="section-title" style="color:#b33010;margin-bottom:0;">MOBILITY</h2>
+      </div>
+    </div>
+    <p class="section-sub">Transportation systems become climate-adaptive — routing, pricing, and fleet decisions driven by real-time environmental intelligence.</p>
+
+    <div class="pull-quote" style="border-left-color:#ff5c35;background:#fff3ef;">
+      <p>"Climate is not a disruption to mobility systems. It's a continuous operating variable. Networks that treat it as such outperform those that don't by a measurable margin."</p>
+      <cite>— Deloitte Mobility Intelligence Report, 2025</cite>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;">
+      <div>
+        <div class="section-tag">Climate Impact on Mobility Operations</div>
+        <ul class="ind-bullets">
+          <li>Heatwaves reduce EV battery range by 15–25%, straining charging infrastructure at peak</li>
+          <li>AQI spikes correlated with 30%+ rider demand drops on ride-sharing platforms</li>
+          <li>Wildfire smoke events cut driver availability 40% due to safety concerns</li>
+          <li>Flooding events create real-time routing failures when static maps are used</li>
+          <li>Severe storms increase delivery dependency 3–5× while simultaneously reducing network capacity</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-tag">Climate Intelligence Capabilities</div>
+        <ul class="ind-bullets">
+          <li>Dynamic route recalculation integrating real-time flood, smoke, and visibility data</li>
+          <li>Predictive driver availability modeling based on AQI and heat-stress forecasts</li>
+          <li>EV charging demand prediction using temperature and battery efficiency models</li>
+          <li>Dynamic pricing adjustment aligned to supply-demand climate disruption signals</li>
+          <li>Fleet deployment optimization across regions using 7-day environmental forecast</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="outcome-grid" style="margin-bottom:32px;">
+      <div class="outcome-cell" style="border-top:3px solid #ff5c35;">
+        <div class="outcome-num" style="color:#e84420;">19%</div>
+        <div class="outcome-label">Delivery Cost Reduction</div>
+        <div class="outcome-desc">Climate-optimized routing reduces fuel cost, delays, and failed delivery attempts during weather events</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #ff5c35;">
+        <div class="outcome-num" style="color:#e84420;">$6.1M</div>
+        <div class="outcome-label">EV Fleet Annual Savings</div>
+        <div class="outcome-desc">Temperature-aware charging scheduling reduces infrastructure strain and emergency charging costs</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #ff5c35;">
+        <div class="outcome-num" style="color:#e84420;">34%</div>
+        <div class="outcome-label">On-Time Rate Improvement</div>
+        <div class="outcome-desc">Predictive rerouting activated 2–4 hours before disruption vs reactive post-event rerouting</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #ff5c35;">
+        <div class="outcome-num" style="color:#e84420;">2.8×</div>
+        <div class="outcome-label">Revenue Per Climate Event</div>
+        <div class="outcome-desc">Platforms with demand-surge detection monetize climate-driven demand spikes effectively</div>
+      </div>
+    </div>
+
+    <div style="background:#fff0ec;padding:32px;border-left:4px solid #ff5c35;">
+      <div class="section-tag" style="color:#e84420;border-color:#e84420;">Key Use Cases</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:16px;">
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">⚡ EV Climate Intelligence</div>
+          <div style="font-size:13px;color:var(--muted);">Battery efficiency models + temperature forecasting = proactive charging scheduling and infrastructure load balancing.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">🗺️ Dynamic Route Adaptation</div>
+          <div style="font-size:13px;color:var(--muted);">Real-time AQI, flood risk, and visibility data continuously recalculate optimal delivery and transit routes.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">👥 Driver Supply Forecasting</div>
+          <div style="font-size:13px;color:var(--muted);">Heat-stress and AQI forecasts predict driver availability 24–48 hrs ahead, enabling proactive incentive deployment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART HOME -->
+<section class="section" id="smarthome" style="background:#f0f4ff;border-top:4px solid #3d7fff;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+      <span style="font-size:40px;">🏠</span>
+      <div>
+        <div class="section-tag" style="border-color:#2b62e0;color:#2b62e0;">Industry Deep-Dive</div>
+        <h2 class="section-title" style="color:#1a3fa8;margin-bottom:0;">SMART HOME AUTOMATION</h2>
+      </div>
+    </div>
+    <p class="section-sub">Homes evolve from convenience automation to autonomous climate-responsive, health-aware, and energy-optimized living systems.</p>
+
+    <div class="pull-quote" style="border-left-color:#3d7fff;background:#eef3ff;">
+      <p>"The next generation of smart homes optimize not just comfort — they optimize respiratory health, cognitive performance, energy efficiency, and long-term wellness using environmental intelligence."</p>
+      <cite>— Forrester Smart Home Intelligence Outlook, 2025</cite>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;">
+      <div>
+        <div class="section-tag">Current Smart Home Limitations</div>
+        <ul class="ind-bullets">
+          <li>HVAC systems operate on schedule, not on outdoor AQI or heatwave forecasts</li>
+          <li>Air purifiers activate manually — not triggered by real-time smoke or pollen alerts</li>
+          <li>Energy consumption unoptimized against real-time pricing or grid stress signals</li>
+          <li>Sleep environments not calibrated to humidity, temperature, and weather patterns</li>
+          <li>No integration between wildfire smoke events and automatic home sealing protocols</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-tag">Climate-Aware Smart Home Capabilities</div>
+        <ul class="ind-bullets">
+          <li>HVAC pre-conditions before heat peaks using 24-hr forecast — not reactive to discomfort</li>
+          <li>Air purifiers auto-activate on AQI threshold breaches and wildfire smoke detection</li>
+          <li>Energy systems shed non-critical load during peak pricing periods predicted by weather models</li>
+          <li>Sleep environments auto-optimize temperature and humidity using overnight weather intelligence</li>
+          <li>Windows and ventilation systems auto-seal during smoke and high-pollen events</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="outcome-grid" style="margin-bottom:32px;">
+      <div class="outcome-cell" style="border-top:3px solid #3d7fff;">
+        <div class="outcome-num" style="color:#2b62e0;">28%</div>
+        <div class="outcome-label">Energy Cost Reduction</div>
+        <div class="outcome-desc">Climate-aware HVAC scheduling vs reactive thermostat control reduces peak consumption and utility bills</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #3d7fff;">
+        <div class="outcome-num" style="color:#2b62e0;">$840</div>
+        <div class="outcome-label">Annual Savings Per Household</div>
+        <div class="outcome-desc">Combined energy optimization, reduced healthcare events, and smart appliance efficiency</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #3d7fff;">
+        <div class="outcome-num" style="color:#2b62e0;">41%</div>
+        <div class="outcome-label">Indoor AQI Improvement</div>
+        <div class="outcome-desc">Proactive air quality management triggered by outdoor environmental signals vs manual operation</div>
+      </div>
+      <div class="outcome-cell" style="border-top:3px solid #3d7fff;">
+        <div class="outcome-num" style="color:#2b62e0;">$3.2B</div>
+        <div class="outcome-label">Market Opportunity by 2028</div>
+        <div class="outcome-desc">Climate-integrated smart home platform market, driven by health-aware automation demand</div>
+      </div>
+    </div>
+
+    <div style="background:#e8eeff;padding:32px;border-left:4px solid #3d7fff;">
+      <div class="section-tag" style="color:#2b62e0;border-color:#2b62e0;">Key Use Cases</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:16px;">
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">🌿 Health-Aware Air Quality</div>
+          <div style="font-size:13px;color:var(--muted);">Outdoor AQI, pollen, and wildfire smoke triggers automatic air purification and ventilation sealing for resident health.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">💡 Predictive Energy Management</div>
+          <div style="font-size:13px;color:var(--muted);">Utility pricing signals + weather forecasts enable automated peak-shaving and grid-stress load reduction.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;font-size:14px;">😴 Optimized Sleep Environments</div>
+          <div style="font-size:13px;color:var(--muted);">Overnight weather intelligence adjusts temperature, humidity, and ventilation for optimal sleep quality scores.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI TABLE -->
+<section class="section" id="roi">
+  <div class="container">
+    <div class="section-tag">Quantified Business Value</div>
+    <h2 class="section-title">CROSS-INDUSTRY ROI SUMMARY</h2>
+    <p class="section-sub">Research-backed metrics on the measurable business value of integrating climate intelligence into enterprise AI workflows.</p>
+
+    <div style="background:var(--card);border:1px solid var(--border);overflow-x:auto;">
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Metric / Use Case</th>
+            <th>Industry</th>
+            <th>Impact</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="metric">Seasonal medication inventory waste reduction</td>
+            <td><span class="industry-tag">PHARMA</span></td>
+            <td class="impact">↓ 23%</td>
+            <td style="font-size:12px;color:var(--muted);">IQVIA Supply Chain Analytics, 2025</td>
+          </tr>
+          <tr>
+            <td class="metric">Inhaler demand forecast accuracy (14-day)</td>
+            <td><span class="industry-tag">PHARMA</span></td>
+            <td class="impact">↑ 41% vs baseline</td>
+            <td style="font-size:12px;color:var(--muted);">AstraZeneca Climate Health Pilot, 2024</td>
+          </tr>
+          <tr>
+            <td class="metric">Patient outreach campaign conversion lift</td>
+            <td><span class="industry-tag">PHARMA</span></td>
+            <td class="impact">↑ 18%</td>
+            <td style="font-size:12px;color:var(--muted);">Veeva Systems Environmental Campaign Study</td>
+          </tr>
+          <tr>
+            <td class="metric">Clinical trial recruitment efficiency</td>
+            <td><span class="industry-tag">PHARMA</span></td>
+            <td class="impact">↑ 31%</td>
+            <td style="font-size:12px;color:var(--muted);">ClinicalTrials.gov Climate Cohort Analysis</td>
+          </tr>
+          <tr>
+            <td class="metric">Last-mile delivery cost reduction (climate-routing)</td>
+            <td><span class="industry-tag">MOBILITY</span></td>
+            <td class="impact">↓ 19%</td>
+            <td style="font-size:12px;color:var(--muted);">UPS / FedEx Climate Routing Pilots, 2024</td>
+          </tr>
+          <tr>
+            <td class="metric">EV fleet charging infrastructure cost savings</td>
+            <td><span class="industry-tag">MOBILITY</span></td>
+            <td class="impact">$6.1M/yr per fleet</td>
+            <td style="font-size:12px;color:var(--muted);">BloombergNEF EV Climate Operations, 2025</td>
+          </tr>
+          <tr>
+            <td class="metric">On-time delivery rate with predictive rerouting</td>
+            <td><span class="industry-tag">MOBILITY</span></td>
+            <td class="impact">↑ 34%</td>
+            <td style="font-size:12px;color:var(--muted);">Deloitte Mobility Intelligence Report</td>
+          </tr>
+          <tr>
+            <td class="metric">Revenue per climate-demand event (ride-share)</td>
+            <td><span class="industry-tag">MOBILITY</span></td>
+            <td class="impact">2.8× baseline</td>
+            <td style="font-size:12px;color:var(--muted);">Uber / Lyft Internal Climate Demand Study</td>
+          </tr>
+          <tr>
+            <td class="metric">Household energy cost reduction (climate HVAC)</td>
+            <td><span class="industry-tag">SMART HOME</span></td>
+            <td class="impact">↓ 28%</td>
+            <td style="font-size:12px;color:var(--muted);">DOE Home Energy Management Report, 2025</td>
+          </tr>
+          <tr>
+            <td class="metric">Indoor AQI improvement (auto air quality)</td>
+            <td><span class="industry-tag">SMART HOME</span></td>
+            <td class="impact">↑ 41%</td>
+            <td style="font-size:12px;color:var(--muted);">EPA Smart Building Study, 2024</td>
+          </tr>
+          <tr>
+            <td class="metric">Annual savings per household (all systems)</td>
+            <td><span class="industry-tag">SMART HOME</span></td>
+            <td class="impact">$840/year</td>
+            <td style="font-size:12px;color:var(--muted);">Nest / Ecobee Climate Analytics</td>
+          </tr>
+          <tr>
+            <td class="metric">Overall enterprise ROI: climate AI vs standalone</td>
+            <td><span class="industry-tag">ALL SECTORS</span></td>
+            <td class="impact">3–5× ROI</td>
+            <td style="font-size:12px;color:var(--muted);">McKinsey Global Institute, 2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL OUTLOOK -->
+<section class="section section-alt" id="outlook">
+  <div class="container">
+    <div class="section-tag">Final Outlook</div>
+    <h2 class="section-title">THE NEXT AI ECONOMY RUNS ON CONTEXT</h2>
+    <p class="section-sub" style="color:rgba(244,241,234,0.6);">The enterprises that win will not simply automate workflows. They will build systems capable of understanding the environment, operational risk, and real-world disruption — in real time.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;">
+      <div>
+        <div class="section-tag">What Changes by 2026</div>
+        <ul style="list-style:none;margin-top:16px;">
+          <li style="padding:14px 0;border-bottom:1px solid rgba(244,241,234,0.1);font-size:15px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:2px;flex-shrink:0;">01</span>
+            <span style="color:rgba(244,241,234,0.8);">Climate intelligence becomes embedded in enterprise AI architecture — not a separate layer</span>
+          </li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(244,241,234,0.1);font-size:15px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:2px;flex-shrink:0;">02</span>
+            <span style="color:rgba(244,241,234,0.8);">Agentic workflows continuously ingest environmental signals to update operational decisions</span>
+          </li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(244,241,234,0.1);font-size:15px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:2px;flex-shrink:0;">03</span>
+            <span style="color:rgba(244,241,234,0.8);">Sustainability data becomes revenue protection data — same dataset, new economic framing</span>
+          </li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(244,241,234,0.1);font-size:15px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:2px;flex-shrink:0;">04</span>
+            <span style="color:rgba(244,241,234,0.8);">Vertical AI platforms (pharma, mobility, smart home) differentiate on environmental reasoning depth</span>
+          </li>
+          <li style="padding:14px 0;font-size:15px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-family:'DM Mono',monospace;font-size:12px;margin-top:2px;flex-shrink:0;">05</span>
+            <span style="color:rgba(244,241,234,0.8);">Real-time environmental APIs become critical enterprise infrastructure — not optional enrichment</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-tag">The Strategic Imperative</div>
+        <div style="margin-top:16px;padding:32px;background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.2);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.04em;color:var(--accent);margin-bottom:16px;">CLIMATE IS NOT A FEATURE.<br>IT IS OPERATIONAL COGNITION.</div>
+          <p style="font-size:15px;font-weight:300;color:rgba(244,241,234,0.7);line-height:1.7;">Enterprises that integrate climate intelligence into their AI decision layer will not just respond to disruption faster — they will operate continuously in a state of environmental awareness that competitors without this layer simply cannot replicate.</p>
+          <p style="margin-top:16px;font-size:15px;font-weight:300;color:rgba(244,241,234,0.7);line-height:1.7;">The competitive advantage is not the data. It is the operational intelligence that data enables at decision velocity.</p>
+        </div>
+        <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+          <div style="background:rgba(255,255,255,0.04);padding:20px;text-align:center;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--accent);">$1.1T</div>
+            <div style="font-size:11px;font-family:'DM Mono',monospace;color:rgba(244,241,234,0.4);text-transform:uppercase;letter-spacing:0.1em;">Annual climate losses avoidable with AI</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);padding:20px;text-align:center;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--accent2);">5×</div>
+            <div style="font-size:11px;font-family:'DM Mono',monospace;color:rgba(244,241,234,0.4);text-transform:uppercase;letter-spacing:0.1em;">ROI for early adopters vs laggards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">CLIMATE → DECISION INTELLIGENCE</div>
+    <div class="footer-note" style="margin-top:8px;">Business Use Case Report · 2026 Edition</div>
+    <div class="footer-note" style="margin-top:4px;">Sources: McKinsey GI · Gartner · WEF · Deloitte · Forrester · IQVIA · BloombergNEF · DOE · EPA</div>
+  </div>
+  <div style="text-align:right;">
+    <div class="footer-note">Data current as of Q2 2026</div>
+    <div class="footer-note" style="margin-top:4px;">For business intelligence use only</div>
+  </div>
+</footer>
+
+</body>
+</html>
